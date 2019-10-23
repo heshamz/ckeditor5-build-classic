@@ -28,8 +28,7 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
-
-import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment'; 
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter';
 import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount';
 import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
@@ -45,6 +44,7 @@ import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
 import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
 import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
+import Direction from 'ckeditor5-direction/src/direction';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -80,14 +80,15 @@ ClassicEditor.builtinPlugins = [
 	MathType,
 	Highlight,
 	Font,
-	Indent, 
+	Indent,
 	IndentBlock,
-	Underline, 
-	Strikethrough, 
-	Code, 
-	Subscript, 
+	Underline,
+	Strikethrough,
+	Code,
+	Subscript,
 	Superscript,
-	TextTransformation
+	TextTransformation,
+	Direction
 ];
 
 // Editor configuration.
@@ -100,20 +101,23 @@ ClassicEditor.defaultConfig = {
 			'heading',
 			'|',
 			'alignment',
+			'direction:ltr',
+			'direction:rtl',
+			'|',
 			'bold',
 			'italic',
-			'underline', 
-			'strikethrough', 
+			'underline',
+			'strikethrough',
 			'code',
-			'subscript', 
+			'subscript',
 			'superscript',
 			'|',
-			'fontSize', 
-			'fontFamily', 
-			'fontColor', 
+			'fontSize',
+			'fontFamily',
+			'fontColor',
 			'fontBackgroundColor',
 			'|',
-			'outdent', 
+			'outdent',
 			'indent',
 			'|',
 			'bulletedList',
@@ -126,7 +130,7 @@ ClassicEditor.defaultConfig = {
 			'highlight',
 			'insertTable',
 			'mediaEmbed',
-			'MathType', 
+			'MathType',
 			'ChemType',
 			'|',
 			'removeFormat'
