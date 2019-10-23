@@ -20,6 +20,7 @@ import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
@@ -27,6 +28,23 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment'; 
+import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter';
+import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount';
+import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
+import MathType from '@wiris/mathtype-ckeditor5';
+import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
+import Font from '@ckeditor/ckeditor5-font/src/font';
+import Indent from '@ckeditor/ckeditor5-indent/src/indent';
+import IndentBlock from '@ckeditor/ckeditor5-indent/src/indentblock';
+import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
+import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
+import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
+import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
+import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
+import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -46,32 +64,72 @@ ClassicEditor.builtinPlugins = [
 	ImageStyle,
 	ImageToolbar,
 	ImageUpload,
+	ImageResize,
 	Link,
 	List,
 	MediaEmbed,
 	Paragraph,
 	PasteFromOffice,
 	Table,
-	TableToolbar
+	TableToolbar,
+	Alignment,
+	Base64UploadAdapter,
+	WordCount,
+	TodoList,
+	RemoveFormat,
+	MathType,
+	Highlight,
+	Font,
+	Indent, 
+	IndentBlock,
+	Underline, 
+	Strikethrough, 
+	Code, 
+	Subscript, 
+	Superscript,
+	TextTransformation
 ];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
 	toolbar: {
 		items: [
+			'undo',
+			'redo',
+			'|',
 			'heading',
 			'|',
+			'alignment',
 			'bold',
 			'italic',
-			'link',
+			'underline', 
+			'strikethrough', 
+			'code',
+			'subscript', 
+			'superscript',
+			'|',
+			'fontSize', 
+			'fontFamily', 
+			'fontColor', 
+			'fontBackgroundColor',
+			'|',
+			'outdent', 
+			'indent',
+			'|',
 			'bulletedList',
 			'numberedList',
+			'todoList',
+			'|',
+			'link',
 			'imageUpload',
 			'blockQuote',
+			'highlight',
 			'insertTable',
 			'mediaEmbed',
-			'undo',
-			'redo'
+			'MathType', 
+			'ChemType',
+			'|',
+			'removeFormat'
 		]
 	},
 	image: {
